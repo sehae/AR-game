@@ -2,7 +2,5 @@
 <QCARConfig>
   <Tracking>
     <ImageTarget name="apostles-blessing-nph-672" size="1.000000 1.395833" />
-    <ImageTarget name="img_0623" size="1.000000 0.562500" />
-    <ImageTarget name="kid" size="1.000000 1.343284" />
   </Tracking>
 </QCARConfig>
