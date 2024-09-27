@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig>
   <Tracking>
+    <ImageTarget name="frogTARGETR" size="1.000000 0.877333" />
     <ImageTarget name="apostles-blessing-nph-672" size="1.000000 1.395833" />
   </Tracking>
 </QCARConfig>

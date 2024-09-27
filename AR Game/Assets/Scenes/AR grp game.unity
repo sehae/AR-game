@@ -172,6 +172,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &145206713 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3018720586628133803, guid: 133308cdb8794744caaef026bde9e1f0, type: 3}
+  m_PrefabInstance: {fileID: 1645018326}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &145206718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 145206713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73466ffeef196a44e9d91ae1001c49c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &531794898
 GameObject:
   m_ObjectHideFlags: 0
@@ -250,13 +267,13 @@ MonoBehaviour:
   PreviewVisible: 1
   RuntimeOcclusion: 0
   RuntimeCollider: 0
-  mTrackableName: apostles-blessing-nph-672
+  mTrackableName: frogTARGETR
   mInitializedInEditor: 1
   mDataSetPath: Vuforia/Image_target.xml
-  mAspectRatio: 1.395833
+  mAspectRatio: 0.877333
   mImageTargetType: 0
   mWidth: 1
-  mHeight: 1.395833
+  mHeight: 0.877333
   mRuntimeTexture: {fileID: 0}
   mMotionHint: 1
   mTrackingOptimization: 0
@@ -292,7 +309,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mObserverBehaviour: {fileID: 531794900}
   mHiddenRoot: {fileID: 0}
-  mTargetName: apostles-blessing-nph-672
+  mTargetName: frogTARGETR
   mDatasetName: Vuforia/Image_target.xml
   mCastedBehaviour: {fileID: 531794900}
   mMeshFilter: {fileID: 0}
@@ -478,6 +495,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3311311803080157842, guid: 133308cdb8794744caaef026bde9e1f0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1645018330}
+    - targetCorrespondingSourceObject: {fileID: 3311311803080157842, guid: 133308cdb8794744caaef026bde9e1f0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1645018332}
+    - targetCorrespondingSourceObject: {fileID: 3018720586628133803, guid: 133308cdb8794744caaef026bde9e1f0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 145206718}
   m_SourcePrefab: {fileID: 100100000, guid: 133308cdb8794744caaef026bde9e1f0, type: 3}
 --- !u!4 &1645018327 stripped
 Transform:
@@ -515,6 +538,18 @@ MonoBehaviour:
   laneDistance: 2
   initialMoveSpeed: 5
   acceleration: 0.1
+--- !u!114 &1645018332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1037997404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73466ffeef196a44e9d91ae1001c49c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1682530803
 GameObject:
   m_ObjectHideFlags: 0
