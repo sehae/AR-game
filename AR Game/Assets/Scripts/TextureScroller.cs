@@ -2,32 +2,23 @@ using UnityEngine;
 
 public class TextureScroller : MonoBehaviour
 {
-    public float scrollSpeed = 0.5f; // Speed at which the texture scrolls
-    private Renderer planeRenderer;
-    private Vector2 savedOffset;
+    public float baseSpeed = 0.1f;  // Base speed for scrolling
+    float speed;
+    public uiManager ui;
 
     void Start()
     {
-        // Get the renderer component of the plane
-        planeRenderer = GetComponent<Renderer>();
-
-        // Save the initial offset of the texture
-        savedOffset = planeRenderer.material.mainTextureOffset;
+        speed = baseSpeed;
     }
 
     void Update()
     {
-        // Calculate the new texture offset along the Y-axis
-        float newOffsetY = Mathf.Repeat(Time.time * scrollSpeed, 1); // Scroll along the Y-axis
-        Vector2 newOffset = new Vector2(savedOffset.x, newOffsetY); // Use saved X offset
+        // Increase road scroll speed by score every 50 points
+        speed = baseSpeed + (ui.score / 100f * 0.05f);  // Increase scroll speed by 0.05f for every 50 points
 
-        // Apply the new offset to the material
-        planeRenderer.material.mainTextureOffset = newOffset;
-    }
+        Debug.Log("TextureScroller Speed: " + speed);
 
-    void OnDisable()
-    {
-        // Reset the texture offset when the object is disabled
-        planeRenderer.material.mainTextureOffset = savedOffset;
+        Vector2 offset = new Vector2(0, Time.time * speed);
+        GetComponent<Renderer>().material.mainTextureOffset = offset;
     }
 }
