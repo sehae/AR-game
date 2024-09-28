@@ -16,6 +16,10 @@ public class uiManager : MonoBehaviour
         InvokeRepeating("scoreUpdate", 1.0f, 0.1f);
     }
 
+    public void Play(){
+        Application.LoadScene ("AR grp game");
+    }
+    
     void Update()
     {
         scoreText.text = "Score: " + score;
