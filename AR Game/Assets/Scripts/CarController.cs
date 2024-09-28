@@ -34,11 +34,6 @@ public class CarController : MonoBehaviour
 
             // Optionally, destroy the car after showing the game over UI
             Destroy(gameObject);  // Destroy the car
-<<<<<<< Updated upstream
-            ui.gameOverActivated();  // Notify the uiManager
-            SceneManager.LoadScene("GameOver"); // Trigger game over scene
-=======
->>>>>>> Stashed changes
         }
     }
 }

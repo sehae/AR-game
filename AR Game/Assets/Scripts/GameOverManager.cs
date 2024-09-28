@@ -1,28 +1,36 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;  // For scene loading
 using UnityEngine.UI;
+using UnityEngine.SceneManagement; // For loading scenes
+using TMPro; // Import TextMesh Pro namespace
 
-public class GameOverManager : MonoBehaviour
+public class GameOverUIManager : MonoBehaviour
 {
-    public Button retryButton;      // Reference to the Retry Button
-    public Button mainMenuButton;   // Reference to the Main Menu Button
+    public TMP_Text finalScoreText; // Reference to the score text UI element
+    public GameObject gameOverPanel; // Reference to the Game Over panel
+    public GameObject RetryButton;
+    public GameObject MainMenubutton;
 
     void Start()
     {
-        // Assign the button listeners
-        retryButton.onClick.AddListener(RetryGame);
-        mainMenuButton.onClick.AddListener(GoToMainMenu);
+        gameOverPanel.SetActive(false); // Hide the Game Over panel at the start
     }
 
-    // Function to reload the current game scene
-    void RetryGame()
+    public void ShowGameOver(int score)
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);  // Reloads the current scene
+        finalScoreText.text = "You got " + score + " points!"; // Display the final score
+        gameOverPanel.SetActive(true); // Show the Game Over panel
     }
 
-    // Function to load the Main Menu scene
-    void GoToMainMenu()
+    public void Retry()
     {
-        SceneManager.LoadScene("MainMenu");  // Replace "MainMenu" with your actual main menu scene name
+        Debug.Log("Retry button clicked.");
+        Debug.Log("Current Scene Index: " + SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void GoToMainMenu()
+    {
+        // Load the main menu scene (replace "MainMenu" with your actual menu scene name)
+        SceneManager.LoadScene("MainMenu");
     }
 }

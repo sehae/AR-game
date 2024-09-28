@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 3476044457645146254}
   - component: {fileID: 1718566694348616772}
   - component: {fileID: 6394644586660352036}
+  - component: {fileID: 4244227898136215003}
+  - component: {fileID: 1245733405671272170}
   m_Layer: 0
   m_Name: Concrete_Barrier_1
   m_TagString: Obstacle
@@ -105,3 +107,44 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.67557096, y: 0.8969129, z: 1.7364583}
   m_Center: {x: 0.000000074505806, y: 0.44845644, z: 0}
+--- !u!54 &4244227898136215003
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 925893509101704593}
+  serializedVersion: 4
+  m_Mass: 100
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &1245733405671272170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 925893509101704593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40d5c26cdf4e7c24fa11e4622058377a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseSpeed: 5
+  ui: {fileID: 0}
