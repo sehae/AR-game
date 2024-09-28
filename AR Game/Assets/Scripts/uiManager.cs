@@ -7,17 +7,15 @@ public class uiManager : MonoBehaviour
 {
     public Text scoreText;
     bool gameOver;
-    int score;
+    public int score;
 
-    // Start is called before the first frame update
     void Start()
     {
         gameOver = false;
         score = 0;
-        InvokeRepeating("scoreUpdate", 1.0f, 0.5f);
+        InvokeRepeating("scoreUpdate", 1.0f, 0.1f);
     }
 
-    // Update is called once per frame
     void Update()
     {
         scoreText.text = "Score: " + score;
@@ -25,12 +23,14 @@ public class uiManager : MonoBehaviour
 
     void scoreUpdate()
     {
-        if (!gameOver) {
+        if (!gameOver)
+        {
             score += 1;
         }
     }
 
-    public void gameOverActivated(){
+    public void gameOverActivated()
+    {
         gameOver = true;
     }
 }
