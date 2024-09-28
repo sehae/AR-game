@@ -7,19 +7,23 @@ public class CarController : MonoBehaviour
     public float maxPos = 2.8f;
 
     Vector2 position;
+    public uiManager ui;  // Reference to uiManager
 
     void Start()
     {
-        position = transform.position;
+        // If the uiManager is not assigned, find it by tag or another method
+        if (ui == null)
+        {
+            ui = GameObject.FindObjectOfType<uiManager>();
+        }
 
+        position = transform.position;
     }
 
     void Update()
     {
         position.x += Input.GetAxis("Horizontal") * carSpeed * Time.deltaTime;
-
         position.x = Mathf.Clamp(position.x, -2.7f, 2.7f);
-
         transform.position = position;
     }
 
@@ -27,8 +31,9 @@ public class CarController : MonoBehaviour
     {
         if (col.gameObject.tag == "Obstacle")
         {
-            Destroy(gameObject);
-            //SceneManager.LoadScene("GameOver");
+            Destroy(gameObject);  // Destroy the car
+            ui.gameOverActivated();  // Notify the uiManager
+            // SceneManager.LoadScene("GameOver"); // Optional: Trigger game over scene
         }
     }
 }
