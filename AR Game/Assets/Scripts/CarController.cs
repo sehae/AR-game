@@ -32,7 +32,7 @@ public class CarController : MonoBehaviour
         {
             Destroy(gameObject);  // Destroy the car
             ui.gameOverActivated();  // Notify the uiManager
-            // SceneManager.LoadScene("GameOver"); // Optional: Trigger game over scene
+            SceneManager.LoadScene("GameOver"); // Trigger game over scene
         }
     }
 }
