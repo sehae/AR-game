@@ -22,4 +22,13 @@ public class CarController : MonoBehaviour
 
         transform.position = position;
     }
+
+    void OnCollisionEnter(Collision col)
+    {
+        if (col.gameObject.tag == "Obstacle")
+        {
+            Destroy(gameObject);
+            //SceneManager.LoadScene("GameOver");
+        }
+    }
 }
