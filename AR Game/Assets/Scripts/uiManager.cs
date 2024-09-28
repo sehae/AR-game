@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class uiManager : MonoBehaviour
 {
@@ -16,14 +18,18 @@ public class uiManager : MonoBehaviour
         InvokeRepeating("scoreUpdate", 1.0f, 0.1f);
     }
 
-    public void Play(){
-        Application.LoadScene ("AR grp game");
-    }
-    
-    void Update()
+     
+   void Update()
+{
+    if (scoreText != null)
     {
         scoreText.text = "Score: " + score;
     }
+    else
+    {
+        Debug.LogError("scoreText is not assigned in the Inspector!");
+    }
+}
 
     void scoreUpdate()
     {
