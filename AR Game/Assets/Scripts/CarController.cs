@@ -11,7 +11,6 @@ public class CarController : MonoBehaviour
 
     void Start()
     {
-        // If the uiManager is not assigned, find it by tag or another method
         if (ui == null)
         {
             ui = GameObject.FindObjectOfType<uiManager>();

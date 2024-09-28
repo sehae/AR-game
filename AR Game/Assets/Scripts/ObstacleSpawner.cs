@@ -17,7 +17,7 @@ public class ObstacleSpawner : MonoBehaviour
 
         timer -= Time.deltaTime;
 
-        // Adjust spawn rate based on score and log the delay timer
+        // Adjust spawn rate based on score 
         delayTimer = Mathf.Max(0.3f, 1f - (ui.score / 100f * 0.1f));
         Debug.Log("Spawner Delay Timer: " + delayTimer);
 
