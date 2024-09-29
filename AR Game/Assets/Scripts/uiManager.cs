@@ -1,13 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine.UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+using UnityEngine.UI;
 
 public class uiManager : MonoBehaviour
 {
     public Text scoreText;
+    public GameOverUIManager gameOverUIManager; // Reference to the Game Over UI Manager
     bool gameOver;
     public int score;
 
@@ -23,7 +22,10 @@ public class uiManager : MonoBehaviour
 {
     if (scoreText != null)
     {
-        scoreText.text = "Score: " + score;
+        if (!gameOver)
+        {
+            scoreText.text = "Score: " + score;
+        }
     }
     else
     {
@@ -42,5 +44,6 @@ public class uiManager : MonoBehaviour
     public void gameOverActivated()
     {
         gameOver = true;
+        gameOverUIManager.ShowGameOver(score); // Show the Game Over UI with the score
     }
 }
