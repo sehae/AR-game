@@ -31,6 +31,6 @@ public class GameOverUIManager : MonoBehaviour
     public void GoToMainMenu()
     {
         // Load the main menu scene (replace "MainMenu" with your actual menu scene name)
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("menuScene");
     }
 }
