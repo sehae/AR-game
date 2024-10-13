@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class ObstacleDestroyer : MonoBehaviour
 {
+    public Transform planeTransform;
     // Start is called before the first frame update
     void Start()
     {
-        
+        // Set the destroyer as a child of the plane
+        transform.SetParent(planeTransform, true);
     }
 
     // Update is called once per frame

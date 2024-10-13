@@ -2,9 +2,12 @@ using UnityEngine;
 
 public class CarController : MonoBehaviour
 {
-    public float carSpeed;
+    public float carSpeed = 5f;
     public float maxPos = 2.8f;
-    Vector2 position;
+    public float tiltSensitivity = 5f;
+    public float planeWidth = 10f;
+    public Transform planeTransform;
+    Vector3 localPosition;
     public uiManager ui;  // Reference to uiManager
 
     void Start()
@@ -14,15 +17,25 @@ public class CarController : MonoBehaviour
             ui = GameObject.FindObjectOfType<uiManager>();
         }
 
-        position = transform.position;
+        // Set the car as a child of the plane
+        transform.SetParent(planeTransform, true);
+        localPosition = transform.localPosition;
     }
 
     void Update()
     {
-        // Control car movement
-        position.x += Input.GetAxis("Horizontal") * carSpeed * Time.deltaTime;
-        position.x = Mathf.Clamp(position.x, -2.7f, 2.7f);
-        transform.position = position;
+        // Use the y-axis of the accelerometer for portrait orientation
+        float tiltInput = Input.acceleration.x * tiltSensitivity;
+        
+        // Update local position
+        localPosition.x += tiltInput * carSpeed * Time.deltaTime;
+        
+        // Clamp position within the plane
+        float halfPlaneWidth = planeWidth / 2f;
+        localPosition.x = Mathf.Clamp(localPosition.x, -halfPlaneWidth, halfPlaneWidth);
+        
+        // Apply the local position
+        transform.localPosition = localPosition;
     }
 
     void OnCollisionEnter(Collision col)
